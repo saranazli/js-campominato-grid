@@ -8,6 +8,8 @@ for( let i = 1; i <= 100; i++){
 
 //FUNCTION
 
+
+// funzione per fare comparire i quadratini colorati e il numero
 function functionInsertSq (numero){
   const sq = document.createElement('div');
   sq.className = 'small_square';
@@ -15,9 +17,14 @@ function functionInsertSq (numero){
 
   sq.addEventListener('click', function(){
 
-    this.innerHTML = numero;
-    this.classList.add('choosed');
-
+    if ( this.innerHTML ===  ' ' ) {
+      this.innerHTML = numero;
+      this.classList.add('choosed');
+    } else {
+      this.innerHTML = ' ';
+      this.classList.remove('choosed');
+    };
+    
   });
 
   return sq;
